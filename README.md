@@ -14,12 +14,19 @@ import { HashTable } from 'angular-hashtable';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  table: HashTable<string, string>;
+  title = 'app';
+  table: HashTable<string, any>;
 
   constructor() {
-    this.table = new HashTable<string, string>();
-    this.table.put('hi', 'Hello World 🛸');
-    console.log(this.table.get('hi'));
+    this.table = new HashTable<string, any>();
+    this.table.put('hi', {
+      msg: 'Hello World',
+      emoji: '🛸'
+    });
+
+    if (this.table.has('hi')) {
+      console.table(this.table.get('hi'));
+    }
   }
 }
 ```
