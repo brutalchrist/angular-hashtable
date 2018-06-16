@@ -1,6 +1,6 @@
 {
   "name": "angular-hashtable",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An HashTable for Angular",
   "main": "./dist/angular-hashtable/bundles/angular-hashtable.umd.js",
   "typings": "./dist/angular-hashtable.d.ts",
