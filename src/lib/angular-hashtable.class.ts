@@ -5,13 +5,8 @@ export class HashTable<T, L> {
     private table: any;
     private id: string;
 
-    constructor(id: string = null, reload: boolean = false) {
+    constructor() {
         this.table = {};
-        this.id = id;
-
-        if (this.id && reload) {
-            this.loadFromMemory();
-        }
     }
 
     public put(key: T, value: L) {
@@ -80,10 +75,6 @@ export class HashTable<T, L> {
         } else {
             return false;
         }
-    }
-
-    private loadFromMemory() {
-        // if(localStorage.getItem(this.id)) this.table = localStorage.getItem(this.id);
     }
 
     public size(): number {
