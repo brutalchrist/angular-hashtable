@@ -9,56 +9,56 @@ export class HashTable<T, L> {
         this.table = {};
     }
 
-    public put(key: T, value: L) {
+    public put(key: T, value: L): void {
         this.table['v_' + key] = value;
     }
 
-    public get(key: T) {
+    public get(key: T): L {
         return this.table['v_' + key];
     }
 
-    public getAll() {
+    public getAll(): L[] {
         const vector = Array.from(Object.keys(this.table), k => this.table[k]);
         return vector;
     }
 
-    public getKeys() {
+    public getKeys(): string[] {
         const keys = Array.from(Object.keys(this.table), k => k.substring(2));
         return keys;
     }
 
-    public has(key: T) {
+    public has(key: T): boolean {
         if (typeof this.table['v_' + key] !== 'undefined') {
             return true;
         }
         return false;
     }
 
-    public remove(key: T) {
+    public remove(key: T): void {
         delete this.table['v_' + key];
     }
 
-    public putArray(key: T, value: L) {
+    public putArray(key: T, value: L): void {
         if (typeof this.table['a_' + key] === 'undefined') {
             this.table['a_' + key] = [];
         }
         this.table['a_' + key].push(value);
     }
 
-    public getArray(key: T) {
+    public getArray(key: T): L {
         if (typeof this.table['a_' + key] === 'undefined') {
             this.table['a_' + key] = [];
         }
         return this.table['a_' + key];
     }
 
-    public removeArray(key: T, value: L) {
+    public removeArray(key: T, value: L): void {
         if (typeof this.table['a_' + key] !== 'undefined') {
             this.table['a_' + key].splice(this.table['a_' + key].indexOf(value), 1);
         }
     }
 
-    public hasArray(key: T) {
+    public hasArray(key: T): boolean {
         if (typeof this.table['a_' + key] !== 'undefined') {
             return true;
         } else {
@@ -66,7 +66,7 @@ export class HashTable<T, L> {
         }
     }
 
-    public hasinArray(key: T, value: L) {
+    public hasinArray(key: T, value: L): boolean {
         if (typeof this.table['a_' + key] !== 'undefined') {
             if (this.table['a_' + key].indexOf(value) !== -1) {
                 return true;
