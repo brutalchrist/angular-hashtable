@@ -23,11 +23,12 @@ export class HashTable<T, L> {
     }
 
     public getAll() {
-        let vector = Array.from(Object.keys(this.table), k => this.table[k]);
+        const vector = Array.from(Object.keys(this.table), k => this.table[k]);
+        return vector;
     }
 
     public getKeys(){
-        let keys = Array.from(Object.keys(this.table), k => k.substring(2));
+        const keys = Array.from(Object.keys(this.table), k => k.substring(2));
         return keys;
     }
 
