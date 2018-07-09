@@ -96,4 +96,8 @@ export class HashTable<T, L> {
     private loadFromMemory() {
         // if(localStorage.getItem(this.id)) this.table = localStorage.getItem(this.id);
     }
+
+    public size(): number {
+        return Object.keys(this.table).length;
+    }
 }
