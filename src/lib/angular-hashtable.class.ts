@@ -27,7 +27,7 @@ export class HashTable<T, L> {
         return vector;
     }
 
-    public getKeys(){
+    public getKeys() {
         const keys = Array.from(Object.keys(this.table), k => k.substring(2));
         return keys;
     }
@@ -80,17 +80,6 @@ export class HashTable<T, L> {
         } else {
             return false;
         }
-    }
-
-    public saveToMemory() {
-        // localStorage.setItem(this.id, JSON.stringify(this.table, function replacer(key, value) {
-        //     try{
-        //         JSON.stringify(value);
-        //         return value;
-        //     } catch(e){
-        //         return false;
-        //     }
-        // }));
     }
 
     private loadFromMemory() {
