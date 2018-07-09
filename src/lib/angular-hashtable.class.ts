@@ -23,13 +23,12 @@ export class HashTable<T, L> {
     }
 
     public getAll() {
-        const vector = [];
-        // tslint:disable-next-line:forin
-        for (const key in this.table) {
-            vector.push(this.table[key]);
-        }
+        let vector = Array.from(Object.keys(this.table), k => this.table[k]);
+    }
 
-        return vector;
+    public getKeys(){
+        let keys = Array.from(Object.keys(this.table), k => k.substring(2));
+        return keys;
     }
 
     public has(key: T) {
