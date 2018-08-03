@@ -80,4 +80,18 @@ export class HashTable<T, L> {
     public size(): number {
         return Object.keys(this.table).length;
     }
+
+    /***************************************************/
+    // ForEach Function
+    // forEach(callback: function(key,value) )
+    // @callback: A Callback function use to iterate the Object  
+    //
+    // Iterate all objects Hashtable
+    // A used like arguments in the callback function
+    /***************************************************/
+    public forEach(callback) {
+        for (let key in this.table) {
+            callback(key.substring(2), this.table[key]);
+        }
+    }
 }
