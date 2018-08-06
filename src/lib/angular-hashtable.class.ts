@@ -9,8 +9,9 @@ export class HashTable<T, L> {
         this.table = {};
     }
 
-    public put(key: T, value: L): void {
+    public put(key: T, value: L): HashTable<T, L> {
         this.table['v_' + key] = value;
+        return this;
     }
 
     public get(key: T): L {
@@ -34,15 +35,17 @@ export class HashTable<T, L> {
         return false;
     }
 
-    public remove(key: T): void {
+    public remove(key: T): HashTable<T, L> {
         delete this.table['v_' + key];
+        return this;
     }
 
-    public putArray(key: T, value: L): void {
+    public putArray(key: T, value: L): HashTable<T, L> {
         if (typeof this.table['a_' + key] === 'undefined') {
             this.table['a_' + key] = [];
         }
         this.table['a_' + key].push(value);
+        return this;
     }
 
     public getArray(key: T): L {
@@ -52,10 +55,11 @@ export class HashTable<T, L> {
         return this.table['a_' + key];
     }
 
-    public removeArray(key: T, value: L): void {
+    public removeArray(key: T, value: L): HashTable<T, L> {
         if (typeof this.table['a_' + key] !== 'undefined') {
             this.table['a_' + key].splice(this.table['a_' + key].indexOf(value), 1);
         }
+        return this;
     }
 
     public hasArray(key: T): boolean {
@@ -89,7 +93,7 @@ export class HashTable<T, L> {
     // Iterate all objects Hashtable
     // A used like arguments in the callback function
     /***************************************************/
-    public forEach(callback) {
+    public forEach(callback): void {
         for (let key in this.table) {
             callback(key.substring(2), this.table[key]);
         }
