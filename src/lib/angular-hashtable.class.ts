@@ -3,7 +3,6 @@
 */
 export class HashTable<T, L> {
     private table: any;
-    private id: string;
 
     constructor() {
         this.table = {};
