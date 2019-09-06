@@ -1,6 +1,6 @@
 {
   "name": "angular-hashtable",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "An HashTable for Angular",
   "main": "./dist/angular-hashtable/bundles/angular-hashtable.umd.js",
   "typings": "./dist/angular-hashtable.d.ts",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/brutalchrist/angular-hashtable/issues#readme",
   "peerDependencies": {
-    "@angular/common": "^8.2.5",
-    "@angular/core": "^8.2.5"
+    "@angular/common": "^8.1.3",
+    "@angular/core": "^8.1.3"
   }
 }
